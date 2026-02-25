@@ -1,0 +1,1153 @@
+<!DOCTYPE html>
+<html lang="es" class="dark">
+<head>
+<meta charset="utf-8"/>
+<link href="img/isologo_industrias_xamanen.png" rel="icon" type="image/png" style="width: 343px; height: 192px;"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta name="description" content="Plataforma SaaS para consultoras de Seguridad e Higiene. Automatice auditorías, firmas digitales en campo y reportes instantáneos."/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+    tailwind.config = {
+        darkMode: "class",
+        theme: {
+            extend: {
+                colors: {
+                    "primary": "#001f3d",
+                    "secondary": "#011a33",
+                    "accent": "#00D1C1",
+                    "background-light": "#fcfcfc",
+                    "background-dark": "#0f1923",
+                },
+                fontFamily: {
+                    "display": ["Plus Jakarta Sans", "sans-serif"],
+                    "serif": ["Plus Jakarta Sans", "sans-serif"]
+                },
+            },
+        },
+    }
+</script>
+<style>
+    .hero-gradient-overlay {
+        background: linear-gradient(to bottom, rgba(252,252,252,0.15) 0%, rgba(252,252,252,0.97) 100%);
+    }
+    .dark .hero-gradient-overlay {
+        background: linear-gradient(to bottom, rgba(15,25,35,0.15) 0%, rgba(15,25,35,0.97) 100%);
+    }
+    .reveal {
+        opacity: 0;
+        transform: translateY(28px);
+        transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .reveal-d1 { transition-delay: 100ms; }
+    .reveal-d2 { transition-delay: 200ms; }
+    .reveal-d3 { transition-delay: 300ms; }
+    details summary::-webkit-details-marker { display: none; }
+</style>
+<style>
+    body {
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        color: rgb(30 41 59);
+        background-color: #fcfcfc;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+    .dark body {
+        background-color: #0f1923;
+        color: rgb(226 232 240);
+    }
+    h1, h2, h3, h4, h5, h6 {
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        letter-spacing: -0.025em;
+    }
+</style>
+<title>Digitalice sus Trabajos HSE y Recupere 10h Semanales por Técnico | Xamanen</title>
+
+<!-- Lenis smooth scroll -->
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+
+<style>
+/* ================================================================
+   PREMIUM INTERACTIONS
+   ================================================================ */
+
+
+/* Hero H1 line reveal */
+.hero-line {
+    display: block;
+    overflow: hidden;
+    padding-bottom: 0.08em;
+}
+.hero-line-inner {
+    display: block;
+    transform: translateY(105%);
+    transition: transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.hero-line-inner.revealed {
+    transform: translateY(0);
+}
+
+/* Magnetic wrapper */
+.magnetic {
+    transition: transform 0.55s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: transform;
+}
+
+/* Nav active link */
+.nav-link { position: relative; }
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -3px; left: 0;
+    width: 0; height: 1px;
+    background: #00D1C1;
+    transition: width 0.35s cubic-bezier(0.16,1,0.3,1);
+}
+.nav-link:hover::after,
+.nav-link.active-section::after { width: 100%; }
+
+/* Platform 3D tilt */
+#platform-showcase {
+    transform-style: preserve-3d;
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: transform;
+}
+
+/* Benefit visual hover zoom */
+.benefit-visual {
+    overflow: hidden;
+}
+.benefit-visual > div {
+    transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.benefit-visual:hover > div {
+    transform: scale(1.03);
+}
+
+/* Testimonial card hover lift */
+.t-card {
+    transition: transform 0.4s cubic-bezier(0.16,1,0.3,1), box-shadow 0.4s !important;
+}
+.t-card:hover {
+    transform: translateY(-10px) !important;
+}
+
+/* Form inputs */
+#demo-form input {
+    transition: box-shadow 0.3s, border-color 0.3s;
+}
+#demo-form input:hover {
+    border-color: rgba(0,209,193,0.35);
+}
+#demo-form input:focus {
+    border-color: #00D1C1;
+    box-shadow: 0 0 0 4px rgba(0,209,193,0.12);
+}
+
+/* Prevent any overflow from fixed/animated elements triggering scrollbars */
+html, body {
+    overflow-x: hidden;
+    max-width: 100%;
+}
+
+/* Page load fade-in */
+body {
+    animation: page-in 0.7s ease both;
+}
+@keyframes page-in {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+</style>
+</head>
+<body class="selection:bg-accent selection:text-primary">
+
+
+<!-- ============================================================
+     NAVIGATION
+     ============================================================ -->
+<nav id="navbar" class="fixed top-0 z-[60] w-full bg-background-dark/80 backdrop-blur-md border-b border-white/5 transition-all duration-300">
+    <div class="max-w-[1600px] mx-auto px-6 lg:px-16">
+        <div class="flex justify-between items-center h-20 lg:h-24">
+
+            <!-- Logo -->
+            <a href="#" class="flex items-center shrink-0">
+                <img alt="Industrias Xamanen" class="h-7 lg:h-9 w-auto brightness-0 invert" src="img/Industrias_xamanen_logo_sin_fondo.png" style="width: 343px; height: 192px;"/>
+            </a>
+
+            <!-- Desktop Nav -->
+            <div class="hidden lg:flex items-center gap-10">
+                <a href="#producto" class="nav-link text-xs font-bold uppercase tracking-widest text-slate-300 hover:text-accent transition-colors">Producto</a>
+                <a href="#soluciones" class="nav-link text-xs font-bold uppercase tracking-widest text-slate-300 hover:text-accent transition-colors">Soluciones</a>
+                <a href="#proceso" class="nav-link text-xs font-bold uppercase tracking-widest text-slate-300 hover:text-accent transition-colors">Proceso</a>
+                <a href="#precios" class="nav-link text-xs font-bold uppercase tracking-widest text-slate-300 hover:text-accent transition-colors">Precios</a>
+                <a href="#blog" class="nav-link text-xs font-bold uppercase tracking-widest text-slate-300 hover:text-accent transition-colors">Blog</a>
+            </div>
+
+            <!-- Desktop CTAs -->
+            <div class="hidden lg:flex items-center gap-6">
+                <a href="#contacto" class="bg-accent text-primary px-8 py-3 text-[10px] font-black uppercase tracking-[0.3em] hover:shadow-lg transition-all">Agendar Demo</a>
+            </div>
+
+            <!-- Mobile hamburger -->
+            <button id="hamburger" class="lg:hidden p-2 -mr-2 hover:text-accent transition-colors" aria-label="Abrir menú">
+                <span id="ham-icon" class="material-symbols-outlined text-2xl leading-none">menu</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden lg:hidden border-t border-slate-800 bg-background-dark/95 backdrop-blur-md">
+        <div class="px-6 py-8 space-y-6">
+            <a href="#producto" class="block text-sm font-bold uppercase tracking-widest text-slate-300 hover:text-accent transition-colors">Producto</a>
+            <a href="#soluciones" class="block text-sm font-bold uppercase tracking-widest text-slate-300 hover:text-accent transition-colors">Soluciones</a>
+            <a href="#proceso" class="block text-sm font-bold uppercase tracking-widest text-slate-300 hover:text-accent transition-colors">Proceso</a>
+            <a href="#precios" class="block text-sm font-bold uppercase tracking-widest text-slate-300 hover:text-accent transition-colors">Precios</a>
+            <a href="#blog" class="block text-sm font-bold uppercase tracking-widest text-slate-300 hover:text-accent transition-colors">Blog</a>
+            <hr class="border-white/10"/>
+            <a href="#contacto" class="block w-full text-center bg-accent text-primary px-8 py-4 text-xs font-black uppercase tracking-[0.3em]">Agendar Demo Gratis</a>
+        </div>
+    </div>
+</nav>
+
+<!-- ============================================================
+     HERO
+     ============================================================ -->
+<header class="relative min-h-screen flex flex-col justify-start overflow-hidden pt-28 lg:pt-36">
+    <div class="absolute inset-0 z-0">
+        <img alt="Análisis HSE" class="w-full h-full object-cover object-center filter blur-[1px] opacity-40 grayscale-[20%]" src="img/analisis.png"/>
+        <div class="absolute inset-0 hero-gradient-overlay"></div>
+    </div>
+
+    <div class="relative z-10 max-w-[1600px] mx-auto px-6 lg:px-16 pb-12 lg:pb-32 w-full">
+        <div class="max-w-5xl">
+            <!-- Eyebrow -->
+            <div class="font-display text-[10px] md:text-xs font-bold uppercase tracking-[0.4em] text-accent mb-6 md:mb-10 flex items-center gap-4 md:gap-5">
+                <span class="w-8 md:w-12 h-[1px] bg-accent"></span>
+                Plataforma HSE · Para Consultoras
+            </div>
+
+            <!-- H1 -->
+            <h1 class="text-[1.75rem] sm:text-4xl md:text-5xl lg:text-7xl xl:text-[5.5rem] font-display font-extrabold text-white leading-[1.1] md:leading-[0.95] tracking-tight mb-6 md:mb-10">
+                <span class="hero-line"><span class="hero-line-inner">Digitalice el 100%</span></span>
+                <span class="hero-line"><span class="hero-line-inner">de sus trabajos y</span></span>
+                <span class="hero-line"><span class="hero-line-inner">recupere <span class="text-accent underline decoration-accent/30 underline-offset-8">10 Horas</span></span></span>
+                <span class="hero-line"><span class="hero-line-inner">Operativas Semanales</span></span>
+                <span class="hero-line"><span class="hero-line-inner">por Técnico.</span></span>
+            </h1>
+
+            <!-- Subheadline -->
+            <p class="text-base md:text-lg lg:text-xl text-slate-300 font-display leading-relaxed border-l-2 md:border-l-4 border-accent pl-4 md:pl-8 py-1 md:py-2 max-w-xl mb-10 md:mb-12">
+                Digitalización móvil, firmas electrónicas y reportes generados en tiempo real — sin papeles, sin demoras.
+            </p>
+
+            <!-- Social proof micro -->
+            <div class="flex items-center gap-4 md:gap-5 mb-6 md:mb-8">
+                <div class="flex -space-x-2 md:-space-x-3">
+                    <div class="w-8 h-8 md:w-9 md:h-9 rounded-full bg-accent/30 border-2 border-background-dark flex items-center justify-center font-display font-bold text-[9px] md:text-[10px] text-primary">SM</div>
+                    <div class="w-8 h-8 md:w-9 md:h-9 rounded-full bg-primary/20 border-2 border-background-dark flex items-center justify-center font-display font-bold text-[9px] md:text-[10px] text-white">CR</div>
+                    <div class="w-8 h-8 md:w-9 md:h-9 rounded-full bg-accent/20 border-2 border-background-dark flex items-center justify-center font-display font-bold text-[9px] md:text-[10px] text-primary">DH</div>
+                </div>
+                <div>
+                    <div class="text-amber-400 text-xs md:text-sm leading-none mb-1">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <p class="text-[9px] md:text-[10px] font-display font-bold text-slate-500 uppercase tracking-widest">+200 consultoras confían</p>
+                </div>
+            </div>
+
+            <!-- CTAs -->
+            <div class="flex flex-col sm:flex-row gap-3 md:gap-4 mb-8 md:mb-10">
+                <a href="#contacto" class="magnetic bg-accent text-primary px-8 md:px-10 py-4 md:py-5 text-[10px] md:text-xs font-black uppercase tracking-[0.3em] hover:shadow-2xl transition-all inline-flex items-center justify-center gap-3">
+                    <span class="material-symbols-outlined text-sm md:text-base leading-none">rocket_launch</span>
+                    Solicitar Demo Gratis
+                </a>
+                <a href="#software" class="magnetic flex items-center justify-center gap-3 px-8 md:px-10 py-4 md:py-5 border border-slate-700 text-[10px] md:text-xs font-black uppercase tracking-[0.3em] hover:bg-slate-800 transition-all text-white">
+                    <span class="material-symbols-outlined text-sm md:text-base leading-none">play_circle</span>
+                    Ver Plataforma
+                </a>
+            </div>
+
+            <!-- Trust band — Company Logos -->
+            <div class="pt-10 border-t border-slate-800/60 max-w-4xl">
+                <p class="text-[9px] font-display font-bold text-slate-500 uppercase tracking-[0.3em] mb-6">Consultoras que confían en Xamanen:</p>
+                <div class="flex flex-wrap items-center gap-x-8 gap-y-6 opacity-40 hover:opacity-60 transition-opacity">
+                    <div class="text-lg md:text-xl font-display font-black tracking-tighter text-white">CONSTRUX</div>
+                    <div class="text-lg md:text-xl font-display font-black tracking-tighter text-white">SAFE-CO</div>
+                    <div class="text-lg md:text-xl font-display font-black tracking-tighter text-white">MINING-X</div>
+                    <div class="text-lg md:text-xl font-display font-black tracking-tighter text-white">LOGIS-PRO</div>
+                    <div class="text-lg md:text-xl font-display font-black tracking-tighter text-white">INDUS-NET</div>
+                </div>
+            </div>
+
+            <!-- Trust chips (Simplified for mobile) -->
+            <div class="flex flex-wrap gap-4 md:gap-6 mt-10">
+                <span class="flex items-center gap-2 text-[9px] md:text-[10px] font-display font-bold text-slate-500 uppercase tracking-wider">
+                    <span class="material-symbols-outlined text-accent text-xs md:text-sm leading-none">schedule</span>
+                    6h ahorro / informe
+                </span>
+                <span class="flex items-center gap-2 text-[9px] md:text-[10px] font-display font-bold text-slate-500 uppercase tracking-wider">
+                    <span class="material-symbols-outlined text-accent text-xs md:text-sm leading-none">draw</span>
+                    Firma digital legal
+                </span>
+                <span class="flex items-center gap-2 text-[9px] md:text-[10px] font-display font-bold text-slate-500 uppercase tracking-wider">
+                    <span class="material-symbols-outlined text-accent text-xs md:text-sm leading-none">cloud_done</span>
+                    100% en la nube
+                </span>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- ============================================================
+     TRUST BAR
+     ============================================================ -->
+<section class="py-14 border-y border-slate-100 dark:border-slate-800">
+    <div class="max-w-[1600px] mx-auto px-6 lg:px-16 flex flex-col lg:flex-row items-center gap-10">
+        <p class="font-display text-[10px] font-bold uppercase tracking-[0.5em] text-slate-400 whitespace-nowrap shrink-0">Confiado por industrias líderes</p>
+        <div class="flex flex-wrap justify-between items-center w-full gap-8 opacity-30 hover:opacity-50 transition-opacity duration-500">
+            <div class="text-xl font-display font-black tracking-tighter italic">CONSTRUX</div>
+            <div class="text-xl font-display font-black tracking-tighter italic">MINING-X</div>
+            <div class="text-xl font-display font-black tracking-tighter italic">SAFE-CO</div>
+            <div class="text-xl font-display font-black tracking-tighter italic">LOGIS-PRO</div>
+            <div class="text-xl font-display font-black tracking-tighter italic">INDUS-NET</div>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================================
+     STATS BAR
+     ============================================================ -->
+<section class="py-20 bg-primary">
+    <div class="max-w-[1600px] mx-auto px-6 lg:px-16">
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-0 lg:divide-x divide-white/10">
+            <div class="reveal text-center lg:px-12">
+                <div class="text-5xl lg:text-6xl font-display font-black text-white mb-2"><span class="stat-val" data-count="200" data-suffix="+">200+</span></div>
+                <div class="text-[10px] font-display font-bold uppercase tracking-[0.3em] text-slate-400">Consultoras activas</div>
+            </div>
+            <div class="reveal reveal-d1 text-center lg:px-12">
+                <div class="text-5xl lg:text-6xl font-display font-black text-white mb-2"><span class="stat-val" data-count="50" data-suffix="k+">50k+</span></div>
+                <div class="text-[10px] font-display font-bold uppercase tracking-[0.3em] text-slate-400">Inspecciones realizadas</div>
+            </div>
+            <div class="reveal reveal-d2 text-center lg:px-12">
+                <div class="text-5xl lg:text-6xl font-display font-black text-white mb-2"><span class="stat-val" data-count="98" data-suffix="%">98%</span></div>
+                <div class="text-[10px] font-display font-bold uppercase tracking-[0.3em] text-slate-400">Tasa de retención</div>
+            </div>
+            <div class="reveal reveal-d3 text-center lg:px-12">
+                <div class="text-5xl lg:text-6xl font-display font-black text-white mb-2"><span class="stat-val" data-count="6" data-suffix="h">6h</span></div>
+                <div class="text-[10px] font-display font-bold uppercase tracking-[0.3em] text-slate-400">Ahorro por informe</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================================
+     MAIN
+     ============================================================ -->
+<main class="bg-background-light dark:bg-background-dark">
+
+    <!-- BENEFITS SECTION -->
+    <section id="producto" class="py-32 lg:py-40">
+        <div class="max-w-[1600px] mx-auto px-6 lg:px-16">
+
+            <div class="max-w-4xl mb-24 reveal">
+                <div class="font-display text-xs font-bold uppercase tracking-[0.5em] text-accent mb-8 flex items-center gap-5">
+                    <span class="w-10 h-[1px] bg-accent"></span>
+                    Por qué Xamanen
+                </div>
+                <h2 class="text-5xl lg:text-8xl font-display font-extrabold text-primary dark:text-white mb-8 leading-none">
+                    Deje atrás la burocracia.<br/><span class="text-accent italic font-serif font-light">Escalar es posible.</span>
+                </h2>
+                <p class="text-2xl font-serif italic text-slate-400">El tiempo que gasta en transcripción es tiempo que pierde en nuevos clientes.</p>
+            </div>
+
+            <div id="soluciones" class="space-y-40 lg:space-y-64">
+
+                <!-- Benefit 1 -->
+                <div class="flex flex-col lg:flex-row items-center gap-16 lg:gap-24 reveal">
+                    <div class="w-full lg:w-1/2">
+                        <div class="benefit-visual aspect-[4/3] bg-slate-100 dark:bg-slate-900 overflow-hidden relative rounded-2xl shadow-xl">
+                            <div class="absolute inset-0">
+                                <img src="img/dash_2.png" alt="Dashboard SST — Indicadores de Accidentalidad en tiempo real" class="w-full h-full object-cover object-top"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w-full lg:w-1/2 space-y-8">
+                        <div class="space-y-3">
+                            <span class="font-display text-xs font-bold text-accent uppercase tracking-[0.4em]">Efficiency / ROI</span>
+                            <h3 class="text-4xl lg:text-6xl font-display font-bold text-primary dark:text-white">Reportes Instantáneos</h3>
+                        </div>
+                        <p class="text-xl lg:text-2xl font-display text-slate-600 dark:text-slate-400 leading-relaxed max-w-xl">
+                            Dashboards HSE en tiempo real con indicadores de accidentalidad, gráficos por turno, género y estado de investigaciones. Sus datos disponibles en el instante que los necesita, sin esperas ni transcripciones.
+                        </p>
+                        <div class="pt-8 border-t border-slate-100 dark:border-slate-800">
+                            <div class="text-6xl lg:text-7xl font-display font-black text-primary dark:text-white">6h <span class="text-xl font-display font-normal text-slate-400 ml-2">Ahorro por informe</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Benefit 2 -->
+                <div class="flex flex-col lg:flex-row-reverse items-center gap-16 lg:gap-24 reveal">
+                    <div class="w-full lg:w-1/2">
+                        <div class="benefit-visual aspect-[4/3] bg-primary overflow-hidden relative rounded-2xl shadow-xl">
+                            <div class="absolute inset-0">
+                                <img src="img/checklist_xama.png" alt="Checklists digitales de ambiente de trabajo y actitud hacia la seguridad" class="w-full h-full object-cover object-top"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w-full lg:w-1/2 space-y-8">
+                        <div class="space-y-3">
+                            <span class="font-display text-xs font-bold text-accent uppercase tracking-[0.4em]">Sustainability / Cost</span>
+                            <h3 class="text-4xl lg:text-6xl font-display font-bold text-primary dark:text-white">Checklists Digitales</h3>
+                        </div>
+                        <p class="text-xl lg:text-2xl font-display text-slate-600 dark:text-slate-400 leading-relaxed max-w-xl">
+                            Reemplace el papel por formularios digitales inteligentes: ambiente de trabajo, actitud hacia la seguridad y mucho más. Cada respuesta queda registrada, trazable y accesible desde cualquier dispositivo, en el momento exacto de la inspección.
+                        </p>
+                        <div class="pt-8 border-t border-slate-100 dark:border-slate-800">
+                            <div class="text-6xl lg:text-7xl font-display font-black text-primary dark:text-white">100% <span class="text-xl font-display font-normal text-slate-400 ml-2">Sin papelería física</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Benefit 3 -->
+                <div class="flex flex-col lg:flex-row items-center gap-16 lg:gap-24 reveal">
+                    <div class="w-full lg:w-1/2">
+                        <div class="benefit-visual aspect-[4/3] bg-accent/10 dark:bg-slate-900 overflow-hidden relative rounded-2xl shadow-xl">
+                            <div class="absolute inset-0">
+                                <img src="img/moodle_xama.png" alt="Plataforma de capacitaciones virtuales Xamanen — cursos y calendario de formación" class="w-full h-full object-cover object-top"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w-full lg:w-1/2 space-y-8">
+                        <div class="space-y-3">
+                            <span class="font-display text-xs font-bold text-accent uppercase tracking-[0.4em]">Training / Compliance</span>
+                            <h3 class="text-4xl lg:text-6xl font-display font-bold text-primary dark:text-white">Capacitaciones Virtuales</h3>
+                        </div>
+                        <p class="text-xl lg:text-2xl font-display text-slate-600 dark:text-slate-400 leading-relaxed max-w-xl">
+                            Capacite a su equipo desde cualquier lugar con cursos integrados a la plataforma. Calendarios de formación, seguimiento de progreso y certificados digitales — todo conectado con su gestión HSE en tiempo real.
+                        </p>
+                        <div class="pt-8 border-t border-slate-100 dark:border-slate-800">
+                            <div class="text-6xl lg:text-7xl font-display font-black text-primary dark:text-white">100% <span class="text-xl font-display font-normal text-slate-400 ml-2">Formación integrada</span></div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- PRODUCT SCREENSHOT -->
+    <section id="software" class="py-24 bg-primary overflow-hidden">
+        <div class="max-w-[1600px] mx-auto px-6 lg:px-16">
+            <div class="text-center mb-16 reveal">
+                <div class="font-display text-xs font-bold uppercase tracking-[0.5em] text-accent mb-6 flex items-center justify-center gap-4">
+                    <span class="w-8 h-[1px] bg-accent"></span>La Plataforma<span class="w-8 h-[1px] bg-accent"></span>
+                </div>
+                <h2 class="text-4xl lg:text-7xl font-display font-extrabold text-white leading-tight">
+                    Todo su proceso HSE,<br/><span class="text-accent italic font-serif font-light">en un solo lugar.</span>
+                </h2>
+                <p class="mt-6 text-lg text-slate-400 font-serif italic max-w-2xl mx-auto">
+                    Desde la inspección en campo hasta el reporte firmado y entregado — sin pasos intermedios, sin fricciones.
+                </p>
+            </div>
+
+            <div class="relative reveal">
+                <div class="absolute -inset-4 bg-accent/5 rounded-3xl blur-3xl"></div>
+                <div id="platform-showcase" class="relative rounded-2xl overflow-hidden border border-white/10 shadow-2xl shadow-black/60">
+                    <img src="img/dash_1.png" alt="Plataforma Xamanen — Dashboard HSE · Indicadores de Accidentalidad" class="w-full h-auto"/>
+                    <div class="absolute inset-0 bg-gradient-to-t from-primary/50 via-transparent to-transparent pointer-events-none"></div>
+                </div>
+                <!-- Feature chips -->
+                <div class="absolute bottom-6 left-6 flex flex-wrap gap-3">
+                    <span class="bg-accent/90 text-primary text-[10px] font-black px-4 py-2 rounded-full font-display uppercase tracking-wider">Dashboard en Tiempo Real</span>
+                    <span class="bg-white/90 text-primary text-[10px] font-black px-4 py-2 rounded-full font-display uppercase tracking-wider">App Móvil iOS &amp; Android</span>
+                    <span class="bg-primary/90 text-white text-[10px] font-black px-4 py-2 rounded-full border border-white/20 font-display uppercase tracking-wider">Reportes PDF Automáticos</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section id="proceso" class="py-32 bg-white dark:bg-background-dark">
+        <div class="max-w-[1600px] mx-auto px-6 lg:px-16">
+
+            <div class="max-w-2xl mb-20 reveal">
+                <div class="font-display text-xs font-bold uppercase tracking-[0.5em] text-accent mb-6 flex items-center gap-5">
+                    <span class="w-10 h-[1px] bg-accent"></span>Cómo funciona
+                </div>
+                <h2 class="text-5xl lg:text-7xl font-display font-black text-primary dark:text-white leading-[0.9]">
+                    Del contrato<br/>al campo en <span class="text-accent italic font-serif font-light">2 semanas.</span>
+                </h2>
+            </div>
+
+            <!-- Vertical steps -->
+            <div class="relative max-w-3xl">
+                <!-- Connector line -->
+                <div class="absolute left-8 top-10 bottom-10 w-[1px] bg-gradient-to-b from-accent via-accent/30 to-transparent hidden lg:block pointer-events-none"></div>
+
+                <!-- Step 01 -->
+                <div class="relative flex gap-8 lg:gap-16 pb-16 reveal">
+                    <div class="shrink-0 w-16 h-16 bg-accent text-primary rounded-2xl flex items-center justify-center font-display font-black text-xl shadow-lg shadow-accent/30 relative z-10">01</div>
+                    <div class="flex-1 border-b border-slate-100 dark:border-white/5 pb-16">
+                        <span class="font-display text-[10px] font-bold text-accent uppercase tracking-[0.4em] block mb-3">Día 1</span>
+                        <h3 class="text-3xl lg:text-4xl font-display font-bold text-primary dark:text-white mb-4">Consultoría sin costo</h3>
+                        <p class="text-lg font-serif italic text-slate-500 dark:text-slate-400 leading-relaxed mb-6 max-w-lg">
+                            Analizamos sus flujos actuales e identificamos exactamente dónde pierde tiempo y dinero. Sin compromiso.
+                        </p>
+                        <a href="#contacto" class="inline-flex items-center gap-2 text-xs font-display font-black uppercase tracking-[0.3em] text-accent group">
+                            Agendar consulta gratuita
+                            <span class="material-symbols-outlined text-sm leading-none transition-transform group-hover:translate-x-1">arrow_forward</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Step 02 -->
+                <div class="relative flex gap-8 lg:gap-16 pb-16 reveal">
+                    <div class="shrink-0 w-16 h-16 bg-slate-100 dark:bg-slate-800 text-primary dark:text-white rounded-2xl flex items-center justify-center font-display font-black text-xl relative z-10 border border-accent/20">02</div>
+                    <div class="flex-1 border-b border-slate-100 dark:border-white/5 pb-16">
+                        <span class="font-display text-[10px] font-bold text-accent uppercase tracking-[0.4em] block mb-3">Día 2–3</span>
+                        <h3 class="text-3xl lg:text-4xl font-display font-bold text-primary dark:text-white mb-4">Demo con sus datos reales</h3>
+                        <p class="text-lg font-serif italic text-slate-500 dark:text-slate-400 leading-relaxed mb-6 max-w-lg">
+                            Pruebe la plataforma con sus propios protocolos. Vea sus reportes, su firma digital y cómo opera su inspector en campo.
+                        </p>
+                        <a href="#software" class="inline-flex items-center gap-2 text-xs font-display font-black uppercase tracking-[0.3em] text-accent group">
+                            Ver la plataforma en acción
+                            <span class="material-symbols-outlined text-sm leading-none transition-transform group-hover:translate-x-1">arrow_forward</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Step 03 -->
+                <div class="relative flex gap-8 lg:gap-16 pb-16 reveal">
+                    <div class="shrink-0 w-16 h-16 bg-accent text-primary rounded-2xl flex items-center justify-center font-display font-black text-xl shadow-lg shadow-accent/30 relative z-10">03</div>
+                    <div class="flex-1 border-b border-slate-100 dark:border-white/5 pb-16">
+                        <span class="font-display text-[10px] font-bold text-accent uppercase tracking-[0.4em] block mb-3">Día 4–7</span>
+                        <h3 class="text-3xl lg:text-4xl font-display font-bold text-primary dark:text-white mb-4">Configuración personalizada</h3>
+                        <p class="text-lg font-serif italic text-slate-500 dark:text-slate-400 leading-relaxed mb-6 max-w-lg">
+                            Cargamos todos sus checklists, protocolos y plantillas de reporte. Listos en 72h. Sin trabajo extra de su parte.
+                        </p>
+                        <a href="#precios" class="inline-flex items-center gap-2 text-xs font-display font-black uppercase tracking-[0.3em] text-accent group">
+                            Ver planes disponibles
+                            <span class="material-symbols-outlined text-sm leading-none transition-transform group-hover:translate-x-1">arrow_forward</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Step 04 -->
+                <div class="relative flex gap-8 lg:gap-16 reveal">
+                    <div class="shrink-0 w-16 h-16 bg-slate-100 dark:bg-slate-800 text-primary dark:text-white rounded-2xl flex items-center justify-center font-display font-black text-xl relative z-10 border border-accent/20">04</div>
+                    <div class="flex-1">
+                        <span class="font-display text-[10px] font-bold text-accent uppercase tracking-[0.4em] block mb-3">Semana 2</span>
+                        <h3 class="text-3xl lg:text-4xl font-display font-bold text-primary dark:text-white mb-4">Puesta en marcha total</h3>
+                        <p class="text-lg font-serif italic text-slate-500 dark:text-slate-400 leading-relaxed mb-8 max-w-lg">
+                            Onboarding del equipo, acompañamiento en las primeras inspecciones y soporte 24/7. De aquí en adelante, solo escala.
+                        </p>
+                        <a href="#contacto" class="magnetic inline-flex items-center gap-3 bg-accent text-primary px-8 py-4 text-xs font-display font-black uppercase tracking-[0.3em] hover:shadow-xl hover:shadow-accent/30 transition-all">
+                            <span class="material-symbols-outlined text-sm leading-none">rocket_launch</span>
+                            Empezar ahora
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="py-24 bg-slate-50 dark:bg-slate-900/20">
+        <div class="max-w-[1600px] mx-auto px-6 lg:px-16">
+            <div class="text-center mb-16 reveal">
+                <div class="font-display text-xs font-bold uppercase tracking-[0.5em] text-accent mb-6 flex items-center justify-center gap-4">
+                    <span class="w-8 h-[1px] bg-accent"></span>Testimonios<span class="w-8 h-[1px] bg-accent"></span>
+                </div>
+                <h2 class="text-4xl lg:text-6xl font-display font-black text-primary dark:text-white">
+                    Resultados que <span class="italic font-serif font-light text-accent">hablan solos.</span>
+                </h2>
+            </div>
+            <div class="grid lg:grid-cols-3 gap-8">
+                <div class="t-card bg-white dark:bg-slate-900 p-10 rounded-3xl border border-slate-100 dark:border-white/5 shadow-sm hover:shadow-xl reveal flex flex-col">
+                    <div class="text-amber-400 text-sm mb-6">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <p class="text-lg font-serif italic text-slate-600 dark:text-slate-400 leading-relaxed flex-grow mb-8">
+                        "Reducimos el tiempo de entrega de informes de 3 días a 2 horas. Pasamos de atender 15 clientes a más de 40 con el mismo equipo. El ROI fue inmediato."
+                    </p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-full bg-accent/20 flex items-center justify-center font-display font-black text-primary text-sm shrink-0">SM</div>
+                        <div>
+                            <div class="font-display font-bold text-sm text-primary dark:text-white">Ing. Sebastián Méndez</div>
+                            <div class="text-[10px] text-slate-400 font-display uppercase tracking-wider">Director · SH Consulting</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-primary p-10 rounded-3xl shadow-2xl reveal reveal-d1 flex flex-col">
+                    <div class="text-amber-400 text-sm mb-6">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <p class="text-lg font-serif italic text-white/80 leading-relaxed flex-grow mb-8">
+                        "La firma digital resolvió el 90% de nuestros problemas legales con clientes. Ahora tenemos trazabilidad total en cada inspección y nuestros clientes adoran los reportes."
+                    </p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-full bg-accent/30 flex items-center justify-center font-display font-black text-white text-sm shrink-0">CR</div>
+                        <div>
+                            <div class="font-display font-bold text-sm text-white">Lic. Carolina Ruiz</div>
+                            <div class="text-[10px] text-slate-400 font-display uppercase tracking-wider">Fundadora · SafeWork Ltda.</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="t-card bg-white dark:bg-slate-900 p-10 rounded-3xl border border-slate-100 dark:border-white/5 shadow-sm hover:shadow-xl reveal reveal-d2 flex flex-col">
+                    <div class="text-amber-400 text-sm mb-6">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <p class="text-lg font-serif italic text-slate-600 dark:text-slate-400 leading-relaxed flex-grow mb-8">
+                        "Implementamos Xamanen en 2 semanas. El equipo en campo adoptó la app sin fricciones. Eliminamos la papelería por completo y los errores de transcripción desaparecieron."
+                    </p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-full bg-accent/20 flex items-center justify-center font-display font-black text-primary text-sm shrink-0">DH</div>
+                        <div>
+                            <div class="font-display font-bold text-sm text-primary dark:text-white">Diego Herrera</div>
+                            <div class="text-[10px] text-slate-400 font-display uppercase tracking-wider">Gerente HSE · Constructora Andina</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRICING -->
+    <section id="precios" class="py-24 bg-white dark:bg-background-dark">
+        <div class="max-w-[1600px] mx-auto px-6 lg:px-16">
+            <div class="text-center mb-16 reveal">
+                <div class="font-display text-xs font-bold uppercase tracking-[0.5em] text-accent mb-6 flex items-center justify-center gap-4">
+                    <span class="w-8 h-[1px] bg-accent"></span>Precios<span class="w-8 h-[1px] bg-accent"></span>
+                </div>
+                <h2 class="text-4xl lg:text-6xl font-display font-black text-primary dark:text-white mb-3">
+                    Planes que escalan <span class="italic font-serif font-light text-accent">con su consultora</span>
+                </h2>
+                <p class="text-slate-400 font-serif italic mb-8">Sin contratos a largo plazo. Cancele cuando quiera.</p>
+                <div class="inline-flex items-center p-1 bg-slate-100 dark:bg-slate-800 rounded-xl gap-1">
+                    <button id="btn-monthly" class="px-6 py-2.5 rounded-lg text-xs font-bold uppercase tracking-widest text-slate-400 transition-all" onclick="setPricing('monthly')">Mensual</button>
+                    <button id="btn-annual" class="px-6 py-2.5 rounded-lg text-xs font-bold uppercase tracking-widest bg-accent text-primary shadow-sm transition-all" onclick="setPricing('annual')">Anual (-20%)</button>
+                </div>
+            </div>
+
+            <div class="grid lg:grid-cols-3 gap-8 items-start">
+
+                <!-- Starter -->
+                <div class="bg-white dark:bg-slate-900 p-10 rounded-[2.5rem] border border-slate-200 dark:border-white/5 flex flex-col hover:shadow-xl transition-shadow reveal">
+                    <h3 class="text-xs font-bold uppercase tracking-[0.3em] text-slate-400 mb-6 font-display">Starter</h3>
+                    <div class="flex items-baseline gap-2 mb-2">
+                        <span class="text-6xl font-display font-black price-monthly hidden">$61</span>
+                        <span class="text-6xl font-display font-black price-annual">$49</span>
+                        <span class="text-sm font-bold text-slate-400">/mes</span>
+                    </div>
+                    <p class="text-xs text-slate-400 font-display mb-10 price-annual">Facturado anualmente</p>
+                    <p class="text-xs text-slate-400 font-display mb-10 price-monthly hidden">Facturado mensualmente</p>
+                    <ul class="space-y-4 mb-12 flex-grow">
+                        <li class="flex items-start gap-3 text-sm font-medium"><span class="w-1.5 h-1.5 bg-accent mt-1.5 shrink-0"></span>1 Usuario inspector</li>
+                        <li class="flex items-start gap-3 text-sm font-medium"><span class="w-1.5 h-1.5 bg-accent mt-1.5 shrink-0"></span>5 Clientes activos</li>
+                        <li class="flex items-start gap-3 text-sm font-medium"><span class="w-1.5 h-1.5 bg-accent mt-1.5 shrink-0"></span>Reportes PDF con logo</li>
+                        <li class="flex items-start gap-3 text-sm font-medium"><span class="w-1.5 h-1.5 bg-accent mt-1.5 shrink-0"></span>App móvil incluida</li>
+                        <li class="flex items-start gap-3 text-sm font-medium text-slate-300 dark:text-slate-600"><span class="w-1.5 h-1.5 bg-slate-200 mt-1.5 shrink-0"></span>Sin firma digital</li>
+                    </ul>
+                    <a href="#contacto" class="w-full py-4 rounded-xl border-2 border-primary dark:border-white/20 font-display font-bold text-xs uppercase tracking-widest hover:bg-primary hover:text-white dark:hover:bg-white dark:hover:text-primary transition-all text-center">Empezar ahora</a>
+                </div>
+
+                <!-- Profesional (Popular) -->
+                <div class="bg-primary p-10 rounded-[2.5rem] flex flex-col relative overflow-hidden shadow-2xl shadow-primary/30 lg:-mt-4 reveal reveal-d1">
+                    <div class="absolute top-10 right-[-38px] bg-accent text-primary text-[10px] font-black py-2 px-14 rotate-45 uppercase font-display">Popular</div>
+                    <h3 class="text-xs font-bold uppercase tracking-[0.3em] text-accent mb-6 font-display">Profesional</h3>
+                    <div class="flex items-baseline gap-2 mb-2 text-white">
+                        <span class="text-6xl font-display font-black price-monthly hidden">$161</span>
+                        <span class="text-6xl font-display font-black price-annual">$129</span>
+                        <span class="text-sm font-bold text-white/40">/mes</span>
+                    </div>
+                    <p class="text-xs text-slate-400 font-display mb-10 price-annual">Facturado anualmente</p>
+                    <p class="text-xs text-slate-400 font-display mb-10 price-monthly hidden">Facturado mensualmente</p>
+                    <ul class="space-y-4 mb-12 flex-grow text-white">
+                        <li class="flex items-start gap-3 text-sm font-medium"><span class="w-1.5 h-1.5 bg-accent mt-1.5 shrink-0"></span>5 Usuarios</li>
+                        <li class="flex items-start gap-3 text-sm font-medium"><span class="w-1.5 h-1.5 bg-accent mt-1.5 shrink-0"></span>Clientes ilimitados</li>
+                        <li class="flex items-start gap-3 text-sm font-medium"><span class="w-1.5 h-1.5 bg-accent mt-1.5 shrink-0"></span>Firma digital legal</li>
+                        <li class="flex items-start gap-3 text-sm font-medium"><span class="w-1.5 h-1.5 bg-accent mt-1.5 shrink-0"></span>Dashboard Analítico</li>
+                        <li class="flex items-start gap-3 text-sm font-medium"><span class="w-1.5 h-1.5 bg-accent mt-1.5 shrink-0"></span>Soporte prioritario</li>
+                    </ul>
+                    <a href="#contacto" class="w-full py-4 rounded-xl bg-accent text-primary font-display font-bold text-xs uppercase tracking-widest hover:brightness-110 transition-all text-center">Elegir Profesional</a>
+                </div>
+
+                <!-- Enterprise -->
+                <div class="bg-white dark:bg-slate-900 p-10 rounded-[2.5rem] border border-slate-200 dark:border-white/5 flex flex-col hover:shadow-xl transition-shadow reveal reveal-d2">
+                    <h3 class="text-xs font-bold uppercase tracking-[0.3em] text-slate-400 mb-6 font-display">Enterprise</h3>
+                    <div class="flex items-baseline gap-2 mb-2">
+                        <span class="text-5xl font-display font-black">Custom</span>
+                    </div>
+                    <p class="text-xs text-slate-400 font-display mb-10">Cotización personalizada</p>
+                    <ul class="space-y-4 mb-12 flex-grow">
+                        <li class="flex items-start gap-3 text-sm font-medium"><span class="w-1.5 h-1.5 bg-accent mt-1.5 shrink-0"></span>Usuarios ilimitados</li>
+                        <li class="flex items-start gap-3 text-sm font-medium"><span class="w-1.5 h-1.5 bg-accent mt-1.5 shrink-0"></span>API de integración completa</li>
+                        <li class="flex items-start gap-3 text-sm font-medium"><span class="w-1.5 h-1.5 bg-accent mt-1.5 shrink-0"></span>Onboarding dedicado</li>
+                        <li class="flex items-start gap-3 text-sm font-medium"><span class="w-1.5 h-1.5 bg-accent mt-1.5 shrink-0"></span>SLA garantizado</li>
+                        <li class="flex items-start gap-3 text-sm font-medium"><span class="w-1.5 h-1.5 bg-accent mt-1.5 shrink-0"></span>White-label disponible</li>
+                    </ul>
+                    <a href="#contacto" class="w-full py-4 rounded-xl border-2 border-primary dark:border-white/20 font-display font-bold text-xs uppercase tracking-widest hover:bg-primary hover:text-white transition-all text-center">Hablar con Ventas</a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="py-24 bg-slate-50 dark:bg-slate-900/10">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="text-center mb-16 reveal">
+                <div class="font-display text-xs font-bold uppercase tracking-[0.5em] text-accent mb-6 flex items-center justify-center gap-4">
+                    <span class="w-8 h-[1px] bg-accent"></span>FAQ<span class="w-8 h-[1px] bg-accent"></span>
+                </div>
+                <h2 class="text-4xl lg:text-5xl font-display font-black text-primary dark:text-white">Preguntas <span class="italic font-serif font-light text-accent">Frecuentes</span></h2>
+            </div>
+            <div class="space-y-3 reveal">
+                <details class="group p-6 rounded-2xl border border-slate-200 dark:border-white/5 bg-white dark:bg-slate-900 cursor-pointer hover:shadow-md transition-shadow" open>
+                    <summary class="flex items-center justify-between list-none font-display font-bold text-primary dark:text-white gap-4">
+                        <span>¿Xamanen funciona sin conexión a internet?</span>
+                        <span class="material-symbols-outlined transition-transform duration-300 group-open:rotate-180 text-accent shrink-0">expand_more</span>
+                    </summary>
+                    <p class="mt-4 text-sm text-slate-500 leading-relaxed font-medium">Sí, nuestra app móvil permite completar inspecciones offline en sitios remotos. Los datos se sincronizan automáticamente al recuperar la señal, sin pérdida de información.</p>
+                </details>
+                <details class="group p-6 rounded-2xl border border-slate-200 dark:border-white/5 bg-white dark:bg-slate-900 cursor-pointer hover:shadow-md transition-shadow">
+                    <summary class="flex items-center justify-between list-none font-display font-bold text-primary dark:text-white gap-4">
+                        <span>¿Puedo integrar mis propios protocolos y checklists?</span>
+                        <span class="material-symbols-outlined transition-transform duration-300 group-open:rotate-180 text-accent shrink-0">expand_more</span>
+                    </summary>
+                    <p class="mt-4 text-sm text-slate-500 leading-relaxed font-medium">Totalmente. Nuestro equipo digitaliza sus checklists actuales en menos de 72 horas para que la transición sea inmediata y sin fricción para su equipo en campo.</p>
+                </details>
+                <details class="group p-6 rounded-2xl border border-slate-200 dark:border-white/5 bg-white dark:bg-slate-900 cursor-pointer hover:shadow-md transition-shadow">
+                    <summary class="flex items-center justify-between list-none font-display font-bold text-primary dark:text-white gap-4">
+                        <span>¿Los reportes son personalizables con mi marca?</span>
+                        <span class="material-symbols-outlined transition-transform duration-300 group-open:rotate-180 text-accent shrink-0">expand_more</span>
+                    </summary>
+                    <p class="mt-4 text-sm text-slate-500 leading-relaxed font-medium">Sí, puede incluir su logo, colores corporativos, firmas digitales y fotos de evidencia en reportes PDF profesionales generados en segundos al finalizar cada inspección.</p>
+                </details>
+                <details class="group p-6 rounded-2xl border border-slate-200 dark:border-white/5 bg-white dark:bg-slate-900 cursor-pointer hover:shadow-md transition-shadow">
+                    <summary class="flex items-center justify-between list-none font-display font-bold text-primary dark:text-white gap-4">
+                        <span>¿Qué pasa con mis datos si cancelo mi suscripción?</span>
+                        <span class="material-symbols-outlined transition-transform duration-300 group-open:rotate-180 text-accent shrink-0">expand_more</span>
+                    </summary>
+                    <p class="mt-4 text-sm text-slate-500 leading-relaxed font-medium">Sus datos son siempre suyos. Al cancelar puede exportar toda su información en formatos estándar (PDF, Excel, CSV). Guardamos sus datos durante 90 días adicionales por si desea reactivar.</p>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEWSLETTER / BLOG -->
+    <section id="blog" class="py-32 bg-primary overflow-hidden">
+        <div class="max-w-[1600px] mx-auto px-6 lg:px-16">
+            <div class="grid lg:grid-cols-2 gap-16 lg:gap-24 items-start">
+
+                <!-- Left: Newsletter signup -->
+                <div class="reveal">
+                    <div class="font-display text-xs font-bold uppercase tracking-[0.5em] text-accent mb-8 flex items-center gap-5">
+                        <span class="w-10 h-[1px] bg-accent"></span>Recursos & Blog HSE
+                    </div>
+                    <h2 class="text-5xl lg:text-6xl font-display font-black text-white mb-6 leading-[0.9]">
+                        Manténgase un paso<br/><span class="text-accent italic font-serif font-light">adelante.</span>
+                    </h2>
+                    <p class="text-lg text-slate-400 font-serif italic leading-relaxed mb-10 max-w-md">
+                        Normativas actualizadas, estrategias de crecimiento y casos reales para consultoras HSE. Directo a su correo, sin spam.
+                    </p>
+                    <form id="newsletter-form" class="flex flex-col sm:flex-row gap-3 mb-4">
+                        <input
+                            type="email"
+                            placeholder="su@email.com"
+                            required
+                            class="flex-1 px-5 py-4 bg-white/10 border border-white/20 text-white placeholder-white/30 font-medium text-sm outline-none focus:border-accent focus:bg-white/15 transition-all"
+                        />
+                        <button type="submit" id="newsletter-btn" class="magnetic px-8 py-4 bg-accent text-primary font-display font-black text-xs uppercase tracking-[0.3em] hover:brightness-110 transition-all whitespace-nowrap">
+                            Suscribirse
+                        </button>
+                    </form>
+                    <p class="text-[10px] font-display text-slate-500 uppercase tracking-wider">+500 consultores suscritos · Cancele cuando quiera</p>
+                </div>
+
+                <!-- Right: Article previews -->
+                <div class="space-y-3 reveal reveal-d1">
+                    <a href="#" class="group flex items-start gap-5 p-6 bg-white/5 hover:bg-white/10 border border-white/5 hover:border-accent/30 rounded-2xl transition-all">
+                        <div class="shrink-0 w-12 h-12 bg-accent/20 rounded-xl flex items-center justify-center group-hover:bg-accent/30 transition-colors">
+                            <span class="material-symbols-outlined text-accent text-xl leading-none">article</span>
+                        </div>
+                        <div class="flex-1 min-w-0">
+                            <span class="text-[10px] font-display font-bold text-accent uppercase tracking-widest">Normativa</span>
+                            <h4 class="font-display font-bold text-white text-sm mt-1 leading-snug group-hover:text-accent transition-colors">ISO 45001: los cambios que toda consultora debe conocer este año</h4>
+                            <p class="text-xs text-slate-500 mt-1 font-serif italic">5 min de lectura</p>
+                        </div>
+                        <span class="material-symbols-outlined text-slate-600 group-hover:text-accent transition-colors text-lg leading-none shrink-0 mt-1">arrow_forward</span>
+                    </a>
+
+                    <a href="#" class="group flex items-start gap-5 p-6 bg-white/5 hover:bg-white/10 border border-white/5 hover:border-accent/30 rounded-2xl transition-all">
+                        <div class="shrink-0 w-12 h-12 bg-accent/20 rounded-xl flex items-center justify-center group-hover:bg-accent/30 transition-colors">
+                            <span class="material-symbols-outlined text-accent text-xl leading-none">trending_up</span>
+                        </div>
+                        <div class="flex-1 min-w-0">
+                            <span class="text-[10px] font-display font-bold text-accent uppercase tracking-widest">Estrategia</span>
+                            <h4 class="font-display font-bold text-white text-sm mt-1 leading-snug group-hover:text-accent transition-colors">Cómo triplicar clientes sin contratar más inspectores</h4>
+                            <p class="text-xs text-slate-500 mt-1 font-serif italic">8 min de lectura</p>
+                        </div>
+                        <span class="material-symbols-outlined text-slate-600 group-hover:text-accent transition-colors text-lg leading-none shrink-0 mt-1">arrow_forward</span>
+                    </a>
+
+                    <a href="#" class="group flex items-start gap-5 p-6 bg-white/5 hover:bg-white/10 border border-white/5 hover:border-accent/30 rounded-2xl transition-all">
+                        <div class="shrink-0 w-12 h-12 bg-accent/20 rounded-xl flex items-center justify-center group-hover:bg-accent/30 transition-colors">
+                            <span class="material-symbols-outlined text-accent text-xl leading-none">gavel</span>
+                        </div>
+                        <div class="flex-1 min-w-0">
+                            <span class="text-[10px] font-display font-bold text-accent uppercase tracking-widest">Legal</span>
+                            <h4 class="font-display font-bold text-white text-sm mt-1 leading-snug group-hover:text-accent transition-colors">Firma digital en inspecciones: validez legal en Argentina y LATAM</h4>
+                            <p class="text-xs text-slate-500 mt-1 font-serif italic">6 min de lectura</p>
+                        </div>
+                        <span class="material-symbols-outlined text-slate-600 group-hover:text-accent transition-colors text-lg leading-none shrink-0 mt-1">arrow_forward</span>
+                    </a>
+
+                    <div class="pt-2">
+                        <a href="#" class="inline-flex items-center gap-2 text-xs font-display font-black uppercase tracking-[0.3em] text-accent group">
+                            Ver todos los artículos
+                            <span class="material-symbols-outlined text-sm leading-none transition-transform group-hover:translate-x-1">arrow_forward</span>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA / CONTACT -->
+    <section id="contacto" class="py-24">
+        <div class="max-w-[1600px] mx-auto px-6 lg:px-16">
+            <div class="bg-primary rounded-[3rem] p-10 lg:p-20 relative overflow-hidden shadow-2xl shadow-primary/20">
+                <div class="absolute inset-0 z-0 opacity-[0.04]">
+                    <img src="img/isologo_industrias_xamanen.png" class="w-full h-full object-cover scale-150 rotate-12" alt=""/>
+                </div>
+                <div class="absolute top-0 right-0 w-96 h-96 bg-accent/10 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl pointer-events-none"></div>
+
+                <div class="relative z-10 grid lg:grid-cols-2 gap-16 lg:gap-20 items-center">
+                    <div class="text-white space-y-8">
+                        <div class="font-display text-xs font-bold uppercase tracking-[0.5em] text-accent flex items-center gap-4">
+                            <span class="w-8 h-[1px] bg-accent"></span>Demo Gratuita
+                        </div>
+                        <h2 class="text-4xl lg:text-5xl font-display font-black leading-[1.1]">
+                            Escale su operación <span class="text-accent italic font-serif font-light">hoy mismo.</span>
+                        </h2>
+                        <p class="text-lg text-slate-400 font-serif italic leading-relaxed">
+                            Agende una demo técnica personalizada y descubra por qué las consultoras líderes de Latinoamérica eligen Industrias Xamanen.
+                        </p>
+                        <ul class="space-y-4">
+                            <li class="flex items-center gap-3">
+                                <span class="material-symbols-outlined text-accent text-base leading-none">verified</span>
+                                <span class="text-sm font-medium text-slate-300">Cumplimiento ISO 45001 garantizado</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <span class="material-symbols-outlined text-accent text-base leading-none">bolt</span>
+                                <span class="text-sm font-medium text-slate-300">Implementación en menos de 2 semanas</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <span class="material-symbols-outlined text-accent text-base leading-none">support_agent</span>
+                                <span class="text-sm font-medium text-slate-300">Soporte dedicado 24/7</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="bg-white dark:bg-slate-900 p-8 lg:p-10 rounded-3xl shadow-2xl">
+                        <h3 class="font-display font-black text-primary dark:text-white text-xl mb-1">Agenda tu demo gratuita</h3>
+                        <p class="text-[10px] text-slate-400 font-display uppercase tracking-wider mb-8">Sin compromiso · Respuesta en 24h</p>
+                        <form id="demo-form" class="space-y-4" novalidate>
+                            <input class="w-full px-5 py-4 rounded-xl bg-slate-50 dark:bg-white/5 border border-slate-100 dark:border-white/10 outline-none focus:ring-2 focus:ring-accent font-medium text-sm transition-shadow" placeholder="Nombre completo" type="text" required/>
+                            <input class="w-full px-5 py-4 rounded-xl bg-slate-50 dark:bg-white/5 border border-slate-100 dark:border-white/10 outline-none focus:ring-2 focus:ring-accent font-medium text-sm transition-shadow" placeholder="Email corporativo" type="email" required/>
+                            <input class="w-full px-5 py-4 rounded-xl bg-slate-50 dark:bg-white/5 border border-slate-100 dark:border-white/10 outline-none focus:ring-2 focus:ring-accent font-medium text-sm transition-shadow" placeholder="Nombre de su consultora" type="text"/>
+                            <button type="submit" id="form-submit-btn" class="w-full py-4 bg-accent text-primary font-display font-black rounded-xl text-xs uppercase tracking-widest shadow-lg shadow-accent/20 hover:shadow-accent/40 hover:brightness-105 transition-all active:scale-[0.98]">
+                                Solicitar Demo Gratis &#8594;
+                            </button>
+                            <p class="text-center text-[10px] text-slate-400 font-display">Sin spam. Sin compromisos. Solo resultados.</p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<!-- ============================================================
+     FOOTER
+     ============================================================ -->
+<footer class="bg-primary pt-20 pb-10 text-white border-t border-white/5">
+    <div class="max-w-[1600px] mx-auto px-6 lg:px-16">
+        <div class="grid lg:grid-cols-12 gap-16 mb-16">
+            <div class="lg:col-span-5 space-y-8">
+                <img alt="Industrias Xamanen" class="h-10 w-auto brightness-0 invert" src="img/Industrias_xamanen_logo.png"/>
+                <p class="text-slate-400 font-serif italic leading-relaxed max-w-sm text-sm">
+                    "Liderando la transformación digital de los procesos HSE en toda Latinoamérica. Digitalizamos el rigor, potenciamos el cumplimiento."
+                </p>
+                <div class="flex gap-3">
+                    <a href="#" class="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center hover:bg-accent hover:text-primary transition-all duration-300" aria-label="LinkedIn">
+                        <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                    </a>
+                    <a href="#" class="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center hover:bg-accent hover:text-primary transition-all duration-300" aria-label="Instagram">
+                        <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12c0 3.259.014 3.668.072 4.948.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24c3.259 0 3.668-.014 4.948-.072 1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.689.072-4.948 0-3.259-.014-3.667-.072-4.947-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.899 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.899-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678c-3.405 0-6.162 2.76-6.162 6.162 0 3.405 2.76 6.162 6.162 6.162 3.405 0 6.162-2.76 6.162-6.162 0-3.405-2.76-6.162-6.162-6.162zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405c0 .795-.646 1.44-1.44 1.44-.795 0-1.44-.646-1.44-1.44 0-.794.646-1.439 1.44-1.439.793-.001 1.44.645 1.44 1.439z"/></svg>
+                    </a>
+                </div>
+            </div>
+            <div class="lg:col-span-7 grid grid-cols-2 md:grid-cols-3 gap-8">
+                <div class="space-y-5">
+                    <h4 class="text-[10px] font-black uppercase tracking-[0.3em] text-accent">Producto</h4>
+                    <ul class="space-y-3 text-xs font-bold text-slate-400">
+                        <li><a class="hover:text-white transition-colors" href="#software">Software SaaS</a></li>
+                        <li><a class="hover:text-white transition-colors" href="#">App Móvil</a></li>
+                        <li><a class="hover:text-white transition-colors" href="#precios">Precios</a></li>
+                        <li><a class="hover:text-white transition-colors" href="#">Novedades</a></li>
+                    </ul>
+                </div>
+                <div class="space-y-5">
+                    <h4 class="text-[10px] font-black uppercase tracking-[0.3em] text-accent">Empresa</h4>
+                    <ul class="space-y-3 text-xs font-bold text-slate-400">
+                        <li><a class="hover:text-white transition-colors" href="#">Sobre Nosotros</a></li>
+                        <li><a class="hover:text-white transition-colors" href="#contacto">Contacto</a></li>
+                        <li><a class="hover:text-white transition-colors" href="#">Blog</a></li>
+                        <li><a class="hover:text-white transition-colors" href="#">Soporte</a></li>
+                    </ul>
+                </div>
+                <div class="space-y-5">
+                    <h4 class="text-[10px] font-black uppercase tracking-[0.3em] text-accent">Legal</h4>
+                    <ul class="space-y-3 text-xs font-bold text-slate-400">
+                        <li><a class="hover:text-white transition-colors" href="#">Privacidad</a></li>
+                        <li><a class="hover:text-white transition-colors" href="#">Términos de Uso</a></li>
+                        <li><a class="hover:text-white transition-colors" href="#">Cookies</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="pt-10 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4 text-[10px] font-bold uppercase tracking-[0.5em] text-slate-500">
+            <p>© 2025 Industrias Xamanen. Todos los derechos reservados.</p>
+            <p>Hecho con &#9829; en San Juan, Argentina</p>
+        </div>
+    </div>
+</footer>
+
+<!-- ============================================================
+     JAVASCRIPT
+     ============================================================ -->
+<script>
+    // ============================================================
+    // LENIS SMOOTH SCROLL
+    // ============================================================
+    let lenis;
+    if (typeof Lenis !== 'undefined') {
+        lenis = new Lenis({
+            lerp: 0.08,
+            smoothWheel: true,
+            wheelMultiplier: 1,
+            touchMultiplier: 1.5,
+        });
+        function lenisRaf(time) {
+            lenis.raf(time);
+            requestAnimationFrame(lenisRaf);
+        }
+        requestAnimationFrame(lenisRaf);
+    }
+
+    // ============================================================
+    // NAVBAR SCROLL SHADOW
+    // ============================================================
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+        navbar.classList.toggle('shadow-lg', window.scrollY > 20);
+    }, { passive: true });
+
+    // ============================================================
+    // MOBILE MENU
+    // ============================================================
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const hamIcon = document.getElementById('ham-icon');
+    hamburger.addEventListener('click', () => {
+        const isHidden = mobileMenu.classList.toggle('hidden');
+        hamIcon.textContent = isHidden ? 'menu' : 'close';
+    });
+    mobileMenu.querySelectorAll('a').forEach(a => {
+        a.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden');
+            hamIcon.textContent = 'menu';
+        });
+    });
+
+    // ============================================================
+    // THEME (Always Dark)
+    // ============================================================
+    document.documentElement.classList.add('dark');
+
+    // ============================================================
+    // PRICING TOGGLE
+    // ============================================================
+    function setPricing(mode) {
+        const btnMonthly = document.getElementById('btn-monthly');
+        const btnAnnual  = document.getElementById('btn-annual');
+        const isAnnual   = mode === 'annual';
+        btnAnnual.classList.toggle('bg-accent',  isAnnual);
+        btnAnnual.classList.toggle('text-primary', isAnnual);
+        btnAnnual.classList.toggle('shadow-sm',  isAnnual);
+        btnMonthly.classList.toggle('bg-accent',  !isAnnual);
+        btnMonthly.classList.toggle('text-primary', !isAnnual);
+        btnMonthly.classList.toggle('shadow-sm',  !isAnnual);
+        document.querySelectorAll('.price-annual').forEach(el => el.classList.toggle('hidden', !isAnnual));
+        document.querySelectorAll('.price-monthly').forEach(el => el.classList.toggle('hidden', isAnnual));
+    }
+    setPricing('annual');
+
+    // ============================================================
+    // SCROLL REVEAL
+    // ============================================================
+    const revealObs = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+            if (e.isIntersecting) {
+                e.target.classList.add('visible');
+                revealObs.unobserve(e.target);
+            }
+        });
+    }, { threshold: 0.08, rootMargin: '0px 0px -50px 0px' });
+    document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
+
+    // ============================================================
+    // DEMO FORM
+    // ============================================================
+    document.getElementById('demo-form').addEventListener('submit', (e) => {
+        e.preventDefault();
+        const btn = document.getElementById('form-submit-btn');
+        btn.textContent = '✓ Demo Agendado. Te contactamos en 24h.';
+        btn.classList.replace('bg-accent', 'bg-green-500');
+        btn.disabled = true;
+    });
+
+    // ============================================================
+    // NEWSLETTER FORM
+    // ============================================================
+    const nlForm = document.getElementById('newsletter-form');
+    if (nlForm) {
+        nlForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const btn = document.getElementById('newsletter-btn');
+            btn.textContent = '✓ ¡Suscripto!';
+            btn.style.backgroundColor = '#22c55e';
+            btn.disabled = true;
+        });
+    }
+
+
+    // ============================================================
+    // MAGNETIC BUTTONS
+    // ============================================================
+    document.querySelectorAll('.magnetic').forEach(btn => {
+        btn.addEventListener('mouseenter', () => {
+            btn.style.transition = 'transform 0.1s linear';
+        });
+        btn.addEventListener('mousemove', e => {
+            const r = btn.getBoundingClientRect();
+            const x = (e.clientX - (r.left + r.width  / 2)) * 0.38;
+            const y = (e.clientY - (r.top  + r.height / 2)) * 0.38;
+            btn.style.transform = `translate(${x}px, ${y}px)`;
+        });
+        btn.addEventListener('mouseleave', () => {
+            btn.style.transition = 'transform 0.6s cubic-bezier(0.16, 1, 0.3, 1)';
+            btn.style.transform  = 'translate(0, 0)';
+        });
+    });
+
+    // ============================================================
+    // HERO H1 — LINE REVEAL ON LOAD
+    // ============================================================
+    document.querySelectorAll('.hero-line-inner').forEach((line, i) => {
+        setTimeout(() => line.classList.add('revealed'), 180 + i * 130);
+    });
+
+    // ============================================================
+    // HERO PARALLAX (background image)
+    // ============================================================
+    (function () {
+        const heroBg = document.querySelector('header .absolute img');
+        if (!heroBg) return;
+        heroBg.style.transform = 'translateY(0) scale(1.12)';
+        heroBg.style.willChange = 'transform';
+        const heroHeight = window.innerHeight;
+
+        function updateParallax(scrollY) {
+            if (scrollY > heroHeight * 1.2) return;
+            heroBg.style.transform = `translateY(${scrollY * 0.18}px) scale(1.12)`;
+        }
+
+        if (typeof lenis !== 'undefined' && lenis) {
+            lenis.on('scroll', ({ scroll }) => updateParallax(scroll));
+        } else {
+            window.addEventListener('scroll', () => updateParallax(window.scrollY), { passive: true });
+        }
+    })();
+
+    // ============================================================
+    // PLATFORM SCREENSHOT — 3D TILT ON HOVER
+    // ============================================================
+    (function () {
+        const showcase = document.getElementById('platform-showcase');
+        if (!showcase) return;
+        showcase.addEventListener('mousemove', e => {
+            const r = showcase.getBoundingClientRect();
+            const x = ((e.clientX - r.left) / r.width  - 0.5) * 7;
+            const y = ((e.clientY - r.top)  / r.height - 0.5) * -7;
+            showcase.style.transform = `perspective(1200px) rotateY(${x}deg) rotateX(${y}deg) scale(1.015)`;
+        });
+        showcase.addEventListener('mouseleave', () => {
+            showcase.style.transform = 'perspective(1200px) rotateY(0deg) rotateX(0deg) scale(1)';
+        });
+    })();
+
+    // ============================================================
+    // STAT COUNTERS — animate when visible
+    // ============================================================
+    (function () {
+        const statEls = document.querySelectorAll('.stat-val[data-count]');
+        const countObs = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) return;
+                const el     = entry.target;
+                const target = parseInt(el.dataset.count);
+                const suffix = el.dataset.suffix || '';
+                const dur    = 1600;
+                const t0     = performance.now();
+
+                function tick(now) {
+                    const progress = Math.min((now - t0) / dur, 1);
+                    const ease     = 1 - Math.pow(1 - progress, 4);
+                    el.textContent = Math.floor(ease * target) + suffix;
+                    if (progress < 1) requestAnimationFrame(tick);
+                    else el.textContent = target + suffix;
+                }
+                requestAnimationFrame(tick);
+                countObs.unobserve(el);
+            });
+        }, { threshold: 0.6 });
+
+        statEls.forEach(el => countObs.observe(el));
+    })();
+
+    // ============================================================
+    // ACTIVE NAV SECTION HIGHLIGHT
+    // ============================================================
+    (function () {
+        const sections  = document.querySelectorAll('section[id]');
+        const navLinks  = document.querySelectorAll('nav a.nav-link[href^="#"]');
+
+        const secObs = new IntersectionObserver(entries => {
+            entries.forEach(e => {
+                if (e.isIntersecting) {
+                    navLinks.forEach(l => {
+                        l.classList.remove('active-section', 'text-accent');
+                        if (l.getAttribute('href') === `#${e.target.id}`) {
+                            l.classList.add('active-section', 'text-accent');
+                        }
+                    });
+                }
+            });
+        }, { threshold: 0.45 });
+
+        sections.forEach(s => secObs.observe(s));
+    })();
+</script>
+
+</body>
+</html>
